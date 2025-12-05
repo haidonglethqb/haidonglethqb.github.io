@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Atropos from 'atropos/react';
 import { GraduationCapIcon, TrophyIcon, StarIcon, AwardIcon } from './Icons';
+import 'atropos/css';
 import './Education.css';
 
 interface Award {
@@ -55,51 +57,74 @@ const Education: React.FC = () => {
       <div className="education-container">
         {/* Main Education Card */}
         <motion.div
-          className="education-card main"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6 }}
-          whileHover={{ y: -10 }}
         >
-          <div className="edu-icon">
-            <GraduationCapIcon size={40} color="#fff" />
-          </div>
-          
-          <div className="edu-content">
-            <div className="edu-badge">Undergraduate</div>
-            <h3 className="edu-university">University of Information Technology</h3>
-            <p className="edu-subtitle">VietNam National University (UIT-VNUHCM)</p>
-            
-            <div className="edu-details">
-              <div className="edu-detail-item">
-                <span className="label">Major</span>
-                <span className="value">Information Technology</span>
+          <Atropos
+            className="education-atropos"
+            activeOffset={50}
+            shadowScale={1.05}
+            rotateXMax={12}
+            rotateYMax={12}
+            shadow={true}
+            highlight={true}
+          >
+            <div className="education-card main">
+              {/* Background decorations */}
+              <div className="edu-bg-pattern" data-atropos-offset="-5" />
+              <div className="edu-glow" data-atropos-offset="-3" />
+              
+              <div className="edu-icon" data-atropos-offset="15">
+                <GraduationCapIcon size={40} color="#fff" />
               </div>
-              <div className="edu-detail-item">
-                <span className="label">Period</span>
-                <span className="value">Oct 2022 - May 2026</span>
-              </div>
-              <div className="edu-detail-item">
-                <span className="label">GPA</span>
-                <span className="value highlight">4.0 / 4.0</span>
-              </div>
-            </div>
+              
+              <div className="edu-content">
+                <div className="edu-badge" data-atropos-offset="8">Undergraduate</div>
+                <h3 className="edu-university" data-atropos-offset="6">
+                  University of Information Technology
+                </h3>
+                <p className="edu-subtitle" data-atropos-offset="4">VietNam National University (UIT-VNUHCM)</p>
+                
+                <div className="edu-details" data-atropos-offset="3">
+                  <div className="edu-detail-item">
+                    <span className="label">Major</span>
+                    <span className="value">Information Technology</span>
+                  </div>
+                  <div className="edu-detail-item">
+                    <span className="label">Period</span>
+                    <span className="value">Oct 2022 - May 2026</span>
+                  </div>
+                  <div className="edu-detail-item">
+                    <span className="label">GPA</span>
+                    <span className="value highlight" data-atropos-offset="10">4.0 / 4.0</span>
+                  </div>
+                </div>
 
-            <div className="edu-progress">
-              <div className="progress-label">
-                <span>Academic Progress</span>
-                <span>Final Year</span>
-              </div>
-              <div className="progress-bar">
-                <motion.div 
-                  className="progress-fill"
-                  initial={{ width: 0 }}
-                  animate={isInView ? { width: '85%' } : {}}
-                  transition={{ duration: 1.5, delay: 0.5 }}
-                />
+                <div className="edu-progress" data-atropos-offset="5">
+                  <div className="progress-label">
+                    <span>Academic Progress</span>
+                    <span>Final Year</span>
+                  </div>
+                  <div className="progress-bar">
+                    <motion.div 
+                      className="progress-fill"
+                      initial={{ width: 0 }}
+                      animate={isInView ? { width: '85%' } : {}}
+                      transition={{ duration: 1.5, delay: 0.5 }}
+                    />
+                  </div>
+                </div>
+
+                {/* Floating elements */}
+                <div className="floating-elements">
+                  <span className="float-el" data-atropos-offset="20">🎓</span>
+                  <span className="float-el" data-atropos-offset="18">⭐</span>
+                  <span className="float-el" data-atropos-offset="22">💻</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Atropos>
         </motion.div>
 
         {/* Awards Section */}
@@ -117,23 +142,32 @@ const Education: React.FC = () => {
             {awards.map((award, index) => (
               <motion.div
                 key={award.id}
-                className="award-card"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.03, x: 10 }}
               >
-                <div className="award-icon">
-                  {award.type === 'trophy' ? (
-                    <TrophyIcon size={24} color="#141414" />
-                  ) : (
-                    <StarIcon size={24} color="#141414" />
-                  )}
-                </div>
-                <div className="award-content">
-                  <p className="award-title">{award.title}</p>
-                  <span className="award-date">{award.date}</span>
-                </div>
+                <Atropos
+                  className="award-atropos"
+                  activeOffset={30}
+                  shadowScale={1.02}
+                  rotateXMax={10}
+                  rotateYMax={10}
+                >
+                  <div className="award-card">
+                    <div className="award-glow" data-atropos-offset="-3" />
+                    <div className="award-icon" data-atropos-offset="10">
+                      {award.type === 'trophy' ? (
+                        <TrophyIcon size={24} color="#141414" />
+                      ) : (
+                        <StarIcon size={24} color="#141414" />
+                      )}
+                    </div>
+                    <div className="award-content" data-atropos-offset="5">
+                      <p className="award-title">{award.title}</p>
+                      <span className="award-date">{award.date}</span>
+                    </div>
+                  </div>
+                </Atropos>
               </motion.div>
             ))}
           </div>

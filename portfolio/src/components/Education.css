@@ -1,6 +1,7 @@
 .education {
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   position: relative;
+  overflow: hidden;
 }
 
 .education::before {
@@ -14,22 +15,86 @@
   pointer-events: none;
 }
 
+.education::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 .education-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: start;
+}
+
+/* Education Atropos */
+.education-atropos {
+  width: 100%;
+}
+
+.education-atropos .atropos-inner {
+  border-radius: 24px;
+}
+
+.education-atropos .atropos-shadow {
+  filter: blur(50px);
+  opacity: 0.6;
+}
+
+.education-atropos .atropos-highlight {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
 }
 
 /* Main Education Card */
 .education-card.main {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(47, 47, 47, 0.8) 100%);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, var(--bg-card) 0%, rgba(35, 35, 35, 0.95) 100%);
+  border-radius: 24px;
+  padding: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  backdrop-filter: blur(15px);
+}
+
+/* Background pattern */
+.edu-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(229, 9, 20, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Glow effect */
+.edu-glow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+.education-atropos:hover .edu-glow {
+  opacity: 1;
 }
 
 .education-card.main::before {
@@ -42,65 +107,86 @@
   background: linear-gradient(90deg, #e50914 0%, #ffd700 50%, #00d4ff 100%);
 }
 
-.education-card.main:hover {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  border-color: rgba(229, 9, 20, 0.3);
-}
-
 .edu-icon {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
-  border-radius: 20px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
   color: #fff;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+  margin-bottom: 30px;
+  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.5);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-atropos:hover .edu-icon {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 20px 50px rgba(229, 9, 20, 0.6);
+}
+
+.edu-content {
+  position: relative;
+  z-index: 2;
 }
 
 .edu-badge {
   display: inline-block;
-  background: rgba(229, 9, 20, 0.2);
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.3) 0%, rgba(229, 9, 20, 0.1) 100%);
   color: #e50914;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(229, 9, 20, 0.3);
 }
 
 .edu-university {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   line-height: 1.2;
+  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .edu-subtitle {
   color: var(--text-muted);
   font-size: 1rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .edu-details {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .edu-detail-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.edu-detail-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .edu-detail-item .label {
@@ -114,36 +200,39 @@
 }
 
 .edu-detail-item .value.highlight {
-  color: #e50914;
-  font-size: 1.2rem;
+  color: #ffd700;
+  font-size: 1.4rem;
   font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .edu-progress {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .progress-label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
 .progress-bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
   overflow: hidden;
+  position: relative;
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #e50914 0%, #ffd700 100%);
-  border-radius: 4px;
+  border-radius: 5px;
   position: relative;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
 }
 
 .progress-fill::after {
@@ -153,13 +242,58 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
   animation: shimmer 2s infinite;
 }
 
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+/* Floating elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-el {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: float-bounce 4s infinite ease-in-out;
+}
+
+.float-el:nth-child(1) {
+  top: 15%;
+  right: 15%;
+  animation-delay: 0s;
+}
+
+.float-el:nth-child(2) {
+  top: 50%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.float-el:nth-child(3) {
+  bottom: 20%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+@keyframes float-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
 }
 
 /* Awards Section */
@@ -170,47 +304,86 @@
 .awards-title {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  gap: 15px;
+  font-size: 1.6rem;
+  margin-bottom: 35px;
   color: #ffd700;
 }
 
 .awards-grid {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+}
+
+/* Award Atropos */
+.award-atropos {
+  width: 100%;
+}
+
+.award-atropos .atropos-inner {
+  border-radius: 16px;
+}
+
+.award-atropos .atropos-shadow {
+  filter: blur(30px);
+  opacity: 0.4;
 }
 
 .award-card {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  cursor: default;
+  background: linear-gradient(145deg, var(--bg-card) 0%, rgba(40, 40, 40, 0.9) 100%);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease;
 }
 
-.award-card:hover {
-  background: rgba(255, 215, 0, 0.05);
-  border-color: rgba(255, 215, 0, 0.2);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+.award-atropos:hover .award-card {
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.award-glow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.award-atropos:hover .award-glow {
+  opacity: 1;
 }
 
 .award-icon {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
-  border-radius: 10px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   color: #141414;
   flex-shrink: 0;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-atropos:hover .award-icon {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
 }
 
 .award-content {
@@ -218,31 +391,38 @@
 }
 
 .award-title {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 8px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
   color: var(--text-primary);
+  font-weight: 500;
 }
 
 .award-date {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px 10px;
-  border-radius: 10px;
+  font-size: 0.82rem;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 @media (max-width: 900px) {
   .education-container {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .education-card.main {
-    padding: 25px;
+    padding: 30px;
   }
 
   .edu-university {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+
+  .edu-icon {
+    width: 70px;
+    height: 70px;
   }
 }
-

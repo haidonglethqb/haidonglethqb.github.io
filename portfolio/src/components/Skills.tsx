@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Atropos from 'atropos/react';
 import { CodeIcon, ReactIcon, CloudIcon, DatabaseIcon } from './Icons';
+import 'atropos/css';
 import './Skills.css';
 
 interface SkillCategory {
@@ -10,12 +12,13 @@ interface SkillCategory {
     name: string;
     level: number;
   }[];
+  gradient: string;
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'Programming Languages ',
-    icon: <CodeIcon size={28} color="#e50914" />,
+    title: 'Programming Languages',
+    icon: <CodeIcon size={28} color="#fff" />,
     skills: [
       { name: 'Python', level: 90 },
       { name: 'TypeScript', level: 85 },
@@ -24,10 +27,11 @@ const skillCategories: SkillCategory[] = [
       { name: 'C/C++', level: 75 },
       { name: 'SQL', level: 85 },
     ],
+    gradient: 'linear-gradient(135deg, #e50914 0%, #ff6b6b 100%)',
   },
   {
     title: 'Frameworks & Libraries',
-    icon: <ReactIcon size={28} color="#e50914" />,
+    icon: <ReactIcon size={28} color="#fff" />,
     skills: [
       { name: 'React', level: 88 },
       { name: 'Django', level: 75 },
@@ -36,10 +40,11 @@ const skillCategories: SkillCategory[] = [
       { name: 'Selenium/Pytest', level: 80 },
       { name: 'Playwright', level: 75 },
     ],
+    gradient: 'linear-gradient(135deg, #00d4ff 0%, #0099ff 100%)',
   },
   {
     title: 'DevOps & Cloud',
-    icon: <CloudIcon size={28} color="#e50914" />,
+    icon: <CloudIcon size={28} color="#fff" />,
     skills: [
       { name: 'AWS', level: 80 },
       { name: 'Docker', level: 85 },
@@ -48,10 +53,11 @@ const skillCategories: SkillCategory[] = [
       { name: 'CI/CD', level: 82 },
       { name: 'GitHub Actions', level: 85 },
     ],
+    gradient: 'linear-gradient(135deg, #ffd700 0%, #ff9500 100%)',
   },
   {
     title: 'Database & Backend',
-    icon: <DatabaseIcon size={28} color="#e50914" />,
+    icon: <DatabaseIcon size={28} color="#fff" />,
     skills: [
       { name: 'MySQL', level: 85 },
       { name: 'MongoDB', level: 80 },
@@ -60,6 +66,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'MQTT', level: 75 },
       { name: 'Socket Programming', level: 78 },
     ],
+    gradient: 'linear-gradient(135deg, #a855f7 0%, #6366f1 100%)',
   },
 ];
 
@@ -86,41 +93,83 @@ const Skills: React.FC = () => {
         {skillCategories.map((category, categoryIndex) => (
           <motion.div
             key={category.title}
-            className="skill-category"
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
           >
-            <div className="category-header">
-              <span className="category-icon">{category.icon}</span>
-              <h3 className="category-title">{category.title}</h3>
-            </div>
+            <Atropos
+              className="skill-atropos"
+              activeOffset={40}
+              shadowScale={1.05}
+              rotateXMax={15}
+              rotateYMax={15}
+              shadow={true}
+              highlight={true}
+            >
+              <div className="skill-category">
+                {/* Floating particles background */}
+                <div className="skill-particles" data-atropos-offset="-5">
+                  <span className="particle"></span>
+                  <span className="particle"></span>
+                  <span className="particle"></span>
+                </div>
 
-            <div className="skills-list">
-              {category.skills.map((skill, skillIndex) => (
-                <motion.div
-                  key={skill.name}
-                  className="skill-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.2 + skillIndex * 0.05 }}
-                  whileHover={{ scale: 1.02, x: 5 }}
-                >
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                  </div>
-                  <div className="skill-bar-container">
+                {/* Glow effect */}
+                <div 
+                  className="skill-glow" 
+                  data-atropos-offset="-3"
+                  style={{ background: category.gradient }}
+                />
+
+                <div className="category-header" data-atropos-offset="5">
+                  <span 
+                    className="category-icon" 
+                    data-atropos-offset="10"
+                    style={{ background: category.gradient }}
+                  >
+                    {category.icon}
+                  </span>
+                  <h3 className="category-title" data-atropos-offset="5">{category.title}</h3>
+                </div>
+
+                <div className="skills-list" data-atropos-offset="3">
+                  {category.skills.map((skill, skillIndex) => (
                     <motion.div
-                      className="skill-bar"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.level}%` } : {}}
-                      transition={{ duration: 1, delay: 0.5 + skillIndex * 0.1 }}
-                    />
-                    <span className="skill-level">{skill.level}%</span>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                      key={skill.name}
+                      className="skill-item"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.2 + skillIndex * 0.05 }}
+                    >
+                      <div className="skill-info">
+                        <span className="skill-name">{skill.name}</span>
+                      </div>
+                      <div className="skill-bar-container">
+                        <motion.div
+                          className="skill-bar"
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: `${skill.level}%` } : {}}
+                          transition={{ duration: 1, delay: 0.5 + skillIndex * 0.1 }}
+                          style={{ 
+                            background: category.gradient 
+                          }}
+                        />
+                        <span className="skill-level">{skill.level}%</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Corner accent */}
+                <div 
+                  className="corner-accent" 
+                  data-atropos-offset="8"
+                  style={{ borderColor: category.gradient.includes('#e50914') ? '#e50914' : 
+                           category.gradient.includes('#00d4ff') ? '#00d4ff' :
+                           category.gradient.includes('#ffd700') ? '#ffd700' : '#a855f7' }}
+                />
+              </div>
+            </Atropos>
           </motion.div>
         ))}
       </div>
@@ -134,25 +183,37 @@ const Skills: React.FC = () => {
       >
         <h3 className="language-title">🌐 Language Proficiency</h3>
         <div className="language-cards">
-          {languageSkills.map((lang) => (
-            <motion.div 
-              key={lang.name} 
-              className="language-card"
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <h4>{lang.name}</h4>
-              <p className="lang-level">{lang.level}</p>
-              <span className="lang-score">{lang.score}</span>
-            </motion.div>
-          ))}
-          <motion.div 
-            className="language-card toeic-sw"
-            whileHover={{ scale: 1.05, y: -5 }}
+          <Atropos
+            className="language-atropos"
+            activeOffset={50}
+            shadowScale={1.05}
+            rotateXMax={20}
+            rotateYMax={20}
           >
-            <h4>TOEIC S&W</h4>
-            <p className="lang-level">Speaking & Writing</p>
-            <span className="lang-score">310/400</span>
-          </motion.div>
+            {languageSkills.map((lang) => (
+              <div key={lang.name} className="language-card">
+                <div className="lang-glow" data-atropos-offset="-5" />
+                <h4 data-atropos-offset="10">{lang.name}</h4>
+                <p className="lang-level" data-atropos-offset="5">{lang.level}</p>
+                <span className="lang-score" data-atropos-offset="15">{lang.score}</span>
+              </div>
+            ))}
+          </Atropos>
+          
+          <Atropos
+            className="language-atropos toeic-sw-atropos"
+            activeOffset={50}
+            shadowScale={1.05}
+            rotateXMax={20}
+            rotateYMax={20}
+          >
+            <div className="language-card toeic-sw">
+              <div className="lang-glow cyan" data-atropos-offset="-5" />
+              <h4 data-atropos-offset="10">TOEIC S&W</h4>
+              <p className="lang-level" data-atropos-offset="5">Speaking & Writing</p>
+              <span className="lang-score" data-atropos-offset="15">310/400</span>
+            </div>
+          </Atropos>
         </div>
       </motion.div>
     </section>
