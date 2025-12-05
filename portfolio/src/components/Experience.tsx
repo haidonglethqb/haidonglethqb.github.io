@@ -35,9 +35,9 @@ const experiences: ExperienceItem[] = [
     id: 2,
     company: 'ShopBack',
     logo: '/shopback.svg',
-    role: 'Software Engineer Intern',
+    role: 'Software Engineer',
     period: 'June 2025 - October 2025',
-    type: 'Internship',
+    type: 'Full-time',
     description: [
       'Built and maintained full-stack features for internal and customer-facing web applications',
       'Designed backend services, optimized database queries, and refactored legacy code',
