@@ -1,57 +1,48 @@
-# <div align="center">👋 Hi, I'm <span style="color:#4da6ff">Chu Duc Hai</span></div>
+---
+---
 
-<div align="center">
+<div align="center">👋 Hi, I’m Chu Duc Hai</div>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Poppins&size=28&pause=900&color=4DA6FF&center=true&vCenter=true&width=800&lines=Software+Engineer;Full-stack+Developer;AI+%26+IoT+Engineer;DevOps+Learner;Welcome+to+my+Portfolio)](https://git.io/typing-svg)
 
-</div>
-
----
-
-<div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500"/>
-</div>
-
----
 
 ## 🚀 About Me
-
-I am a **Software Engineer** with experience in full-stack development, cloud/DevOps, and AI-IoT systems.  
+I am a Software Engineer with experience in full-stack development, cloud/DevOps, and AI-IoT systems.
 I enjoy designing system architectures, creating scalable backend services, and building interactive user experiences.
 
-🎯 **Current Focus:**  
-- Full-stack Development (React, Node.js)  
-- DevOps (AWS, Terraform, Docker, CI/CD)  
-- AI & IoT Integration  
-- Backend Architecture & System Design  
+### 🎯 Current Focus
+- Full-stack Development (React, Node.js)
+- DevOps (AWS, Terraform, Docker, CI/CD)
+- AI & IoT Integration
+- Backend Architecture & System Design
 
 📍 Thu Duc, Ho Chi Minh City  
-📧 haidonglethqb@gmail.com  
-🌐 https://github.com/haidonglethqb  
+📧 **haidonglethqb@gmail.com**  
+🌐 **https://github.com/haidonglethqb**  
+
 
 ---
 
 ## 🧠 Skills
 
 ### **Languages**
-`Python`, `Java`, `C#`, `C/C++`, `Typescript`, `SQL`, `Bash`
+Python, Java, C#, C/C++, Typescript, SQL, Bash
 
 ### **Frameworks**
-`React`, `Node.js`, `Django`, `FastAPI`, `Flutter`,  
-`TensorFlow`, `Keras`, `OpenCV`, `MediaPipe`
+React, Node.js, Django, FastAPI, Flutter,  
+TensorFlow, Keras, OpenCV, MediaPipe
 
 ### **DevOps / Cloud**
-`Docker`, `Kubernetes (EKS)`, `Terraform`,  
-`AWS`, `Grafana`, `Prometheus`, `GitHub Actions`
+Docker, Kubernetes (EKS), Terraform,  
+AWS, Grafana, Prometheus, GitHub Actions
 
 ---
 
 ## 🏆 Achievements
-
-- 🥇 First place – Modern IoT Programming (UIT, 2025)  
-- 🥇 First place – Android App Project (2025)  
-- 🥇 First place – Multiplayer UNO Game (C#, Socket)  
-- 🎖 Academic Excellence – 4 consecutive semesters  
+- 🥇 Modern IoT Programming – 2025  
+- 🥇 Android App Project – 2025  
+- 🥇 Multiplayer UNO Game – 2024  
+- 🎖 Academic Excellence – 4 semesters  
 
 ---
 
@@ -60,7 +51,6 @@ I enjoy designing system architectures, creating scalable backend services, and 
 <div align="center">
 
 <img height="170" src="https://github-readme-stats.vercel.app/api?username=haidonglethqb&show_icons=true&theme=tokyonight"/>
-
 <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=haidonglethqb&layout=compact&theme=tokyonight"/>
 
 </div>
@@ -77,49 +67,27 @@ I enjoy designing system architectures, creating scalable backend services, and 
 
 # 🧩 Featured Projects
 
-### 🎮 **UNO Multiplayer Game**
-Real-time communication using socket networking.  
-🔗 https://github.com/haidonglethqb/Uno-Game
+### 🎮 UNO Multiplayer Game  
+🔗 https://github.com/haidonglethqb/Uno-Game  
 
----
+### 🛰 Smart Navigation Assistant  
+🔗 https://github.com/haidonglethqb/Smart-Navigation-Assistant-for-Real-Time-Obstacle-Detection-and-Road-Surface-Analysis  
 
-### 🛰 **Smart Navigation Assistant**
-Real-time obstacle detection & road analysis.  
-🔗 https://github.com/haidonglethqb/Smart-Navigation-Assistant-for-Real-Time-Obstacle-Detection-and-Road-Surface-Analysis
+### 🔐 Playfair & RSA Encryption  
+🔗 https://github.com/haidonglethqb/Playfair-and-RSA-Based-Encryption-Application  
 
----
+### 🤖 SmartAuth – AI + Gesture  
+🔗 https://github.com/haihhdev/IoTweb-devops  
 
-### 🔐 **Playfair & RSA Encryption Application**
-Hybrid cryptography in C#.  
-🔗 https://github.com/haidonglethqb/Playfair-and-RSA-Based-Encryption-Application
+### ☁️ DevSecOps – Chatbot UI  
+🔗 https://github.com/haidonglethqb/my-chatbot-repo  
 
----
+### 🌱 AgroPulse: AI Agriculture  
+🔗 https://github.com/CollinsD61/web_project  
 
-### 🤖 **SmartAuth – Face + Gesture Recognition for IoT**
-AI + smart home automations via MQTT.  
-🔗 https://github.com/haihhdev/IoTweb-devops
-
----
-
-### ☁️ **DevSecOps – Chatbot UI on AWS EKS**
-Terraform + GitHub Actions + Prometheus.  
-🔗 https://github.com/haidonglethqb/my-chatbot-repo
-
----
-
-### 🌱 **AgroPulse: MQTT-Driven AI Agriculture**
-IoT → Cloud → AI → Dashboard.  
-🔗 https://github.com/CollinsD61/web_project
 
 ---
 
 ## 📬 Contact Me
-
 📧 **haidonglethqb@gmail.com**  
-🌐 **https://github.com/haidonglethqb**
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png">
-</div>
+🌐 **https://github.com/haidonglethqb**  
