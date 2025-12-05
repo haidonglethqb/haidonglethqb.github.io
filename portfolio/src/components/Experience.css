@@ -1,0 +1,253 @@
+.experience {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marker-logo {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 12px;
+}
+
+.marker-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.marker-line {
+  width: 3px;
+  flex: 1;
+  background: linear-gradient(180deg, #e50914 0%, rgba(229, 9, 20, 0.1) 100%);
+  min-height: 100px;
+}
+
+.timeline-item:last-child .marker-line {
+  display: none;
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e50914 0%, #00d4ff 100%);
+}
+
+.timeline-content:hover {
+  border-color: rgba(229, 9, 20, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo-small {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 8px;
+  display: none;
+}
+
+.company-logo-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.company-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.role-title {
+  color: #e50914;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.meta-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: rgba(229, 9, 20, 0.2);
+  color: #e50914;
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+.badge-secondary {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.description-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.description-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.description-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #e50914;
+  font-size: 1rem;
+}
+
+.skills-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(229, 9, 20, 0.1);
+  border-color: rgba(229, 9, 20, 0.3);
+  color: #e50914;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .timeline-marker {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .marker-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .marker-line {
+    width: 100%;
+    height: 3px;
+    min-height: auto;
+  }
+
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta-info {
+    align-items: flex-start;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .company-logo-small {
+    display: block;
+  }
+}

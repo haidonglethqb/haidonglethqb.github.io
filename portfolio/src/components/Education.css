@@ -1,0 +1,248 @@
+.education {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  position: relative;
+}
+
+.education::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.education-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Main Education Card */
+.education-card.main {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(47, 47, 47, 0.8) 100%);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.education-card.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #e50914 0%, #ffd700 50%, #00d4ff 100%);
+}
+
+.education-card.main:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(229, 9, 20, 0.3);
+}
+
+.edu-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+}
+
+.edu-badge {
+  display: inline-block;
+  background: rgba(229, 9, 20, 0.2);
+  color: #e50914;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.edu-university {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.edu-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.edu-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.edu-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.edu-detail-item .label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.edu-detail-item .value {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.edu-detail-item .value.highlight {
+  color: #e50914;
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.edu-progress {
+  margin-top: 20px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e50914 0%, #ffd700 100%);
+  border-radius: 4px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Awards Section */
+.awards-section {
+  padding: 20px 0;
+}
+
+.awards-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #ffd700;
+}
+
+.awards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.award-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.award-card:hover {
+  background: rgba(255, 215, 0, 0.05);
+  border-color: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.award-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #141414;
+  flex-shrink: 0;
+}
+
+.award-content {
+  flex: 1;
+}
+
+.award-title {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.award-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .education-container {
+    grid-template-columns: 1fr;
+  }
+
+  .education-card.main {
+    padding: 25px;
+  }
+
+  .edu-university {
+    font-size: 1.6rem;
+  }
+}
+
