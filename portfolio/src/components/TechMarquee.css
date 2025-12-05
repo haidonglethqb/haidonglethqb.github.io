@@ -1,0 +1,144 @@
+.tech-marquee-container {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(229, 9, 20, 0.03) 50%, transparent 100%);
+}
+
+.marquee-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-gradient.left {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 100%);
+}
+
+.marquee-gradient.right {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg-primary) 0%, transparent 100%);
+}
+
+.tech-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.tech-marquee.reverse .marquee-track {
+  animation-direction: reverse;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 40s linear infinite;
+  gap: 50px;
+}
+
+.tech-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-item:hover {
+  background: rgba(229, 9, 20, 0.1);
+  border-color: rgba(229, 9, 20, 0.3);
+  transform: scale(1.05);
+}
+
+.tech-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover .tech-logo {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.tech-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.tech-item:hover .tech-name {
+  color: var(--text-primary);
+}
+
+/* Subtle glow on hover */
+.tech-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tech-item:hover::before {
+  width: 150px;
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .tech-marquee-container {
+    padding: 25px 0;
+  }
+  
+  .marquee-gradient {
+    width: 80px;
+  }
+  
+  .tech-item {
+    padding: 12px 20px;
+    gap: 8px;
+  }
+  
+  .tech-icon {
+    font-size: 1.1rem;
+  }
+  
+  .tech-name {
+    font-size: 0.85rem;
+  }
+  
+  .marquee-track {
+    gap: 30px;
+  }
+}
+

@@ -5,27 +5,31 @@ import { CodeIcon, ReactIcon, CloudIcon, DatabaseIcon } from './Icons';
 import 'atropos/css';
 import './Skills.css';
 
+interface Skill {
+  name: string;
+  level: number;
+  logo: string;
+}
+
 interface SkillCategory {
   title: string;
   icon: React.ReactNode;
-  skills: {
-    name: string;
-    level: number;
-  }[];
+  skills: Skill[];
   gradient: string;
 }
 
+// Using SVG logos from devicon CDN
 const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
     icon: <CodeIcon size={28} color="#fff" />,
     skills: [
-      { name: 'Python', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'C#', level: 80 },
-      { name: 'Java', level: 80 },
-      { name: 'C/C++', level: 75 },
-      { name: 'SQL', level: 85 },
+      { name: 'Python', level: 90, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+      { name: 'TypeScript', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+      { name: 'C#', level: 80, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+      { name: 'Java', level: 80, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+      { name: 'C/C++', level: 75, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+      { name: 'SQL', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
     ],
     gradient: 'linear-gradient(135deg, #e50914 0%, #ff6b6b 100%)',
   },
@@ -33,12 +37,12 @@ const skillCategories: SkillCategory[] = [
     title: 'Frameworks & Libraries',
     icon: <ReactIcon size={28} color="#fff" />,
     skills: [
-      { name: 'React', level: 88 },
-      { name: 'Django', level: 75 },
-      { name: 'Flutter', level: 70 },
-      { name: 'TensorFlow', level: 72 },
-      { name: 'Selenium/Pytest', level: 80 },
-      { name: 'Playwright', level: 75 },
+      { name: 'React', level: 88, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'Django', level: 75, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+      { name: 'Flutter', level: 70, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+      { name: 'TensorFlow', level: 72, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+      { name: 'Selenium', level: 80, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg' },
+      { name: 'Pytest', level: 75, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg' },
     ],
     gradient: 'linear-gradient(135deg, #00d4ff 0%, #0099ff 100%)',
   },
@@ -46,12 +50,12 @@ const skillCategories: SkillCategory[] = [
     title: 'DevOps & Cloud',
     icon: <CloudIcon size={28} color="#fff" />,
     skills: [
-      { name: 'AWS', level: 80 },
-      { name: 'Docker', level: 85 },
-      { name: 'Kubernetes', level: 75 },
-      { name: 'Terraform', level: 78 },
-      { name: 'CI/CD', level: 82 },
-      { name: 'GitHub Actions', level: 85 },
+      { name: 'AWS', level: 80, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+      { name: 'Docker', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'Kubernetes', level: 75, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+      { name: 'Terraform', level: 78, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg' },
+      { name: 'CI/CD', level: 82, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
+      { name: 'GitHub Actions', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
     ],
     gradient: 'linear-gradient(135deg, #ffd700 0%, #ff9500 100%)',
   },
@@ -59,12 +63,12 @@ const skillCategories: SkillCategory[] = [
     title: 'Database & Backend',
     icon: <DatabaseIcon size={28} color="#fff" />,
     skills: [
-      { name: 'MySQL', level: 85 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'Node.js', level: 85 },
-      { name: 'REST APIs', level: 88 },
-      { name: 'MQTT', level: 75 },
-      { name: 'Socket Programming', level: 78 },
+      { name: 'MySQL', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'MongoDB', level: 80, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+      { name: 'Node.js', level: 85, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+      { name: 'GraphQL', level: 88, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
+      { name: 'Redis', level: 75, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg' },
+      { name: 'PostgreSQL', level: 78, logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
     ],
     gradient: 'linear-gradient(135deg, #a855f7 0%, #6366f1 100%)',
   },
@@ -142,6 +146,11 @@ const Skills: React.FC = () => {
                       transition={{ delay: 0.2 + skillIndex * 0.05 }}
                     >
                       <div className="skill-info">
+                        <img 
+                          src={skill.logo} 
+                          alt={skill.name} 
+                          className="skill-logo"
+                        />
                         <span className="skill-name">{skill.name}</span>
                       </div>
                       <div className="skill-bar-container">
