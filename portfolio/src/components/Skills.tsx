@@ -14,7 +14,7 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'Programming Languages',
+    title: 'Programming Languages ',
     icon: <CodeIcon size={28} color="#e50914" />,
     skills: [
       { name: 'Python', level: 90 },
